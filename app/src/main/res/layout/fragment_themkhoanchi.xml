@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/btnLuuKC"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thêm khoản chi"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/edMaKC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Mã khoản chi"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edTenKC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Tên khoản chi"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/edNgayChi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Ngày chi"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edSoTien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Số tiền"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/spLoaiChi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btLuuKC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lưu Khoản Chi" />
+
+</LinearLayout>

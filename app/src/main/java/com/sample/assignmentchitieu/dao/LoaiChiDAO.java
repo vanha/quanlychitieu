@@ -2,11 +2,15 @@ package com.sample.assignmentchitieu.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
 import com.sample.assignmentchitieu.database.DatabaseHelper;
 import com.sample.assignmentchitieu.model.LoaiChi;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoaiChiDAO {
     private SQLiteDatabase sqliteDB;
@@ -34,4 +38,27 @@ public class LoaiChiDAO {
 
         return true;
     }
+
+    public List<LoaiChi> getAllLoaiChi(){
+        List<LoaiChi> danhSachLoaiChi = new ArrayList<>();
+
+        String sqlSelect = "select maLC, tenLC from LoaiChi";
+        Cursor cursor = sqliteDB.rawQuery(sqlSelect, null);
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+
+            String maLoaiChi = cursor.getString(0);
+            String tenLoaiChi = cursor.getString(1);
+
+            LoaiChi objLoaiChi = new LoaiChi(maLoaiChi, tenLoaiChi);
+            danhSachLoaiChi.add(objLoaiChi);
+
+            cursor.moveToNext();
+        }
+
+        return danhSachLoaiChi;
+    }
+
+
 }

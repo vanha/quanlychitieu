@@ -38,6 +38,7 @@ public class ThemLoaiChiFragment extends Fragment {
                 String tenLC = edTenLoaiChi.getText().toString();
 
                 LoaiChi objLoaiChi = new LoaiChi(maLC, tenLC);
+
                 boolean isSuccess = loaiChiDAO.insertLoaiChi(objLoaiChi);
 
                 if(isSuccess){

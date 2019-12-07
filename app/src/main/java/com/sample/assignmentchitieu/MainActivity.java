@@ -22,8 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu, menu);
         return true;
@@ -31,12 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         fragmentTransaction = fragmentManager.beginTransaction();
         Fragment fragment = null;
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case R.id.menu_quanlyloaichi:
                 fragment = new DanhSachLoaiChiFragment();
                 this.setTitle("Danh sách loại chi");
@@ -44,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.commit();
                 return true;
             case R.id.menu_khoanchi:
-                fragment = new DanhSachLoaiChiFragment();
+                fragment = new DanhSachKhoanChiFragment();
                 this.setTitle("Danh sách khoản chi");
                 fragmentTransaction.replace(R.id.frameContent, fragment, "");
                 fragmentTransaction.commit();
@@ -68,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.frameContent, fragment, "themloaichi");
                 fragmentTransaction.commit();
                 return true;
+
+            case R.id.menu_themkhoanchi:
+                fragment = new ThemKhoanChiFragment();
+                this.setTitle("Thêm khoản chi");
+                fragmentTransaction.replace(R.id.frameContent, fragment, "themkhoanchi");
+                fragmentTransaction.commit();
+                return true;
+
             case R.id.menu_thoat:
                 System.exit(0);
                 return true;
